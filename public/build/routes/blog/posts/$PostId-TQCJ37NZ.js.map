@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/matvej/dev/remix-blog/app/routes/blog/posts/$PostId.jsx?browser", "../../../../../app/routes/blog/posts/$PostId.jsx"],
+  "sourcesContent": ["export { default, links } from \"/Users/matvej/dev/remix-blog/app/routes/blog/posts/$PostId.jsx\";", "import { Link, useLoaderData } from 'remix';\nimport blogStyles from '~/styles/blog.css';\n\nexport function links() {\n  return [{ rel: 'stylesheet', href: blogStyles }];\n}\n\nexport let loader = ({ params }) => {\n  const post = [\n    {\n      id: 1,\n      title: 'First post on Remix',\n      content: 'Remix is a great framework....',\n    },\n    {\n      id: 2,\n      title: 'Another post about Remix',\n      content: 'It has very good features....',\n    },\n    {\n      id: 3,\n      title: 'Yet another post about remix',\n      content: 'It has very good features plus more....',\n    },\n  ].find((p) => p.id === Number(params.PostId));\n\n  if (!post) throw Error('No posts found');\n  const data = { ...post };\n  return data;\n};\n\nexport default function GetPost() {\n  const post = useLoaderData();\n\n  return (\n    <>\n      <h2>{post.title}</h2>\n      <p>{post.content}</p>\n    </>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAGO,iBAAiB;AACtB,SAAO,CAAC,EAAE,KAAK,cAAc,MAAM;AAAA;AA2BtB,mBAAmB;AAChC,QAAM,OAAO;AAEb,SACE,0DACE,oCAAC,MAAD,MAAK,KAAK,QACV,oCAAC,KAAD,MAAI,KAAK;AAAA;",
+  "names": []
+}

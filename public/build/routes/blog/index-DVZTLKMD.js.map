@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/matvej/dev/remix-blog/app/routes/blog/index.jsx?browser", "../../../../app/routes/blog/index.jsx"],
-  "sourcesContent": ["export { default, links } from \"/Users/matvej/dev/remix-blog/app/routes/blog/index.jsx\";", "import { Link } from 'remix';\nimport blogStyles from '~/styles/blog.css';\nimport { getPosts } from '~/contentfulConfig';\n\nexport function links() {\n  return [{ rel: 'stylesheet', href: blogStyles }];\n}\n\nexport let loader = async () => {\n  const posts = await getPosts();\n  return posts;\n};\n\nexport default function Blog() {\n  const posts = useLoaderData();\n\n  return (\n    <>\n      <h2>Our latest posts</h2>\n      {posts.map((post) => (\n        <div className=\"card\" key={post.id}>\n          <Link to={`/blog/posts/${post.id}`}>{post.title}</Link>\n        </div>\n      ))}\n    </>\n  );\n}\n"],
-  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAIO,iBAAiB;AACtB,SAAO,CAAC,EAAE,KAAK,cAAc,MAAM;AAAA;AAQtB,gBAAgB;AAC7B,QAAM,QAAQ;AAEd,SACE,0DACE,oCAAC,MAAD,MAAI,qBACH,MAAM,IAAI,CAAC,SACV,oCAAC,OAAD;AAAA,IAAK,WAAU;AAAA,IAAO,KAAK,KAAK;AAAA,KAC9B,oCAAC,MAAD;AAAA,IAAM,IAAI,eAAe,KAAK;AAAA,KAAO,KAAK;AAAA;",
-  "names": []
-}

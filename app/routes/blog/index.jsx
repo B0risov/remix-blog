@@ -1,9 +1,9 @@
-// index.jsx
-
 import { useEffect, useState } from 'react';
 import { Link, useLoaderData } from '@remix-run/react';
 import blogStyles from '~/styles/blog.css';
 import client from '~/contentfulConfig';
+import PostList from '~/components/PostList';
+import { getPosts } from '~/postUtils';
 
 export function links() {
   return [{ rel: "stylesheet", href: blogStyles }];
@@ -52,30 +52,10 @@ export default function Blog() {
 
   return (
     <>
-      <div>
-        <h2>Posts 1</h2>
-        {posts1.map((post) => (
-          <div className="card" key={post.id}>
-            <Link to={`/blog/posts/${post.id}`}>{post.title}</Link>
-          </div>
-        ))}
-      </div>
-      <div>
-        <h2>Posts 2</h2>
-        {posts2.map((post) => (
-          <div className="card" key={post.id}>
-            <Link to={`/blog/posts/${post.id}`}>{post.title}</Link>
-          </div>
-        ))}
-      </div>
-      <div>
-        <h2>Posts 3</h2>
-        {posts3.map((post) => (
-          <div className="card" key={post.id}>
-            <Link to={`/blog/posts/${post.id}`}>{post.title}</Link>
-          </div>
-        ))}
-      </div>
+      <style>{`body { background-color: ${backgroundColor}; }`}</style> {/* Применяем стили напрямую */}
+      <PostList posts={posts1} /> {/* Используем компонент для отображения постов */}
+      <PostList posts={posts2} />
+      <PostList posts={posts3} />
     </>
   );
 }

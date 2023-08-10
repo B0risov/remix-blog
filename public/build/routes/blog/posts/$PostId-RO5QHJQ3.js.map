@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/matvej/dev/remix-blog/app/routes/blog/posts/$PostId.jsx?browser", "../../../../../app/routes/blog/posts/$PostId.jsx"],
-  "sourcesContent": ["export { default, links } from \"/Users/matvej/dev/remix-blog/app/routes/blog/posts/$PostId.jsx\";", "import { useLoaderData } from '@remix-run/react';\nimport blogStyles from '~/styles/blog.css';\nimport client from '~/contentfulConfig';\n\nexport function links() {\n  return [{ rel: \"stylesheet\", href: blogStyles }];\n}\n\nexport async function loader({ params }) {\n  const response = await client.getEntry(params.PostId);\n  if (!response) throw new Error('No posts found');\n\n  const post = {\n    id: response.sys.id,\n    title: response.fields.title,\n    content: response.fields.content,\n  };\n\n  return post;\n}\n\nexport default function GetPost() {\n  const post = useLoaderData();\n\n  return (\n    <>\n      <h2>{post.title}</h2>\n      <p>{post.content}</p>\n    </>\n  );\n}\n\n\n"],
-  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAIO,iBAAiB;AACtB,SAAO,CAAC,EAAE,KAAK,cAAc,MAAM;AAAA;AAgBtB,mBAAmB;AAChC,QAAM,OAAO;AAEb,SACE,0DACE,oCAAC,MAAD,MAAK,KAAK,QACV,oCAAC,KAAD,MAAI,KAAK;AAAA;",
-  "names": []
-}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/matvej/dev/remix-blog/app/routes/index.jsx?browser", "../../../app/routes/index.jsx"],
-  "sourcesContent": ["export { default } from \"/Users/matvej/dev/remix-blog/app/routes/index.jsx\";", "import {Link} from 'remix'\n\nexport default function Home() {\nreturn (\n  <>\n      <h2>This is the Home page</h2>\n      <Link to='/blog'>Go to the blog</Link>\n  </>\n)\n\n}\n\n\n  \n"],
-  "mappings": ";;;;;;;AAAA;;;ACAA;AAEe,gBAAgB;AAC/B,SACE,0DACI,oCAAC,MAAD,MAAI,0BACJ,oCAAC,MAAD;AAAA,IAAM,IAAG;AAAA,KAAQ;AAAA;",
-  "names": []
-}

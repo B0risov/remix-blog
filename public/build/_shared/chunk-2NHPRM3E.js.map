@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/PostList.jsx"],
+  "sourcesContent": ["import { Link } from '@remix-run/react';\n\nexport default function PostList({ posts }) {\n  return (\n    <div>\n      {posts.map((post) => (\n        <div className=\"card\" key={post.id}>\n          <Link to={`/blog/posts/${post.id}`}>{post.title}</Link>\n        </div>\n      ))}\n    </div>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;;AAAA;AAEe,kBAAkB,EAAE,SAAS;AAC1C,SACE,oCAAC,OAAD,MACG,MAAM,IAAI,CAAC,SACV,oCAAC,OAAD;AAAA,IAAK,WAAU;AAAA,IAAO,KAAK,KAAK;AAAA,KAC9B,oCAAC,MAAD;AAAA,IAAM,IAAI,eAAe,KAAK;AAAA,KAAO,KAAK;AAAA;",
+  "names": []
+}
